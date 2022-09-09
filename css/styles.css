@@ -1,3 +1,6 @@
+* {
+  /* outline: 2px solid red; */
+}
 :root {
   /* color variables */
   --primary-text-color: #757575;
@@ -8,6 +11,8 @@
   --logo-text-color: #000000;
   --addr-link-color: rgba(255, 255, 255, 0.6);
   --secondary-bthbckgrd-color: #188ce8;
+  --header-border-color: #ececec;
+  --card-border-color: #eeeeee;
 
   /* fonts variables */
   --primary-font-family: "Roboto", sans-serif;
@@ -22,6 +27,19 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+ul {
+  padding-left: 0;
+}
 .list {
   list-style: none;
 }
@@ -32,12 +50,29 @@ body {
 .link:focus {
   color: var(--accent-text-color);
 }
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
 /* header css */
 .page-header {
 }
+.header-nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--header-border-color);
+}
 .nav {
+  display: flex;
+  align-items: center;
 }
 .logo {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 25px;
+
   font-family: var(--secondary-font-family);
   font-weight: 700;
   color: var(--logo-text-color);
@@ -45,14 +80,21 @@ body {
   line-height: 1.19;
   text-decoration: none;
 }
-.link {
-}
 .logo-text {
   color: var(--accent-text-color);
 }
 .nav-list {
+  display: flex;
+  margin-left: 93px;
+}
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
 }
 .nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--secondary-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -61,19 +103,40 @@ body {
 .current {
   color: var(--accent-text-color);
 }
-.contacs-list {
+.contacts-list {
+  display: flex;
+  margin-left: auto;
+}
+.contacts-list .item:not(:last-child) {
+  margin-right: 50px;
 }
 .contacts-link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 /* hero css */
+.hero-container {
+  padding: 200px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+}
 .hero {
   background-color: var(--footer-bckgrd-color);
+  /* text-align: center; */
 }
 .hero-title {
+  /* margin: 0 auto; */
+  max-width: 696px;
+  /* padding-top: 200px; */
+  /* margin-bottom: 30px; */
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -83,17 +146,19 @@ body {
   color: var(--hero-primary-color);
 }
 .hero-btn {
+  width: 216px;
+  height: 50px;
+  /* margin-bottom: 200px; */
+
   color: var(--hero-primary-color);
-  font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  text-align: center;
   letter-spacing: 0.06em;
   background-color: var(--accent-text-color);
   cursor: pointer;
+  border: 0px solid transparent;
   border-radius: 4px;
-  border-color: transparent;
 }
 .hero-btn:active,
 .hero-btn:focus,
@@ -114,13 +179,23 @@ body {
   clip-path: inset(50%);
   margin: -1px;
 }
-.benefits {
+.section {
+  padding-top: 94px;
 }
 .benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.benefits-item {
+.benefits-list .item {
+  width: 270px;
+  max-width: 270px;
+}
+.benefits .item:not(:last-child) {
+  margin-right: 30px;
 }
 .benefits-subtitle {
+  margin-bottom: 10px;
   color: var(--secondary-text-color);
   font-size: 14px;
   font-weight: 700;
@@ -132,8 +207,13 @@ body {
 }
 /* works of studio css */
 .work {
+  padding-bottom: 94px;
+}
+.image {
+  display: block;
 }
 .subtitle {
+  margin-bottom: 50px;
   color: var(--secondary-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -141,20 +221,52 @@ body {
   text-align: center;
 }
 .work-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
-.work-item {
+.work-list .image {
+  max-width: 370px;
 }
+/* .work-list .item:not(:last-child) {
+  margin-right: 30px;
+} */
 /* our team css */
 .team {
   background-color: var(--btn-bckgrd-color);
+  padding-bottom: 94px;
+}
+.team-title {
+  /* padding-top: 94px; */
+  margin-bottom: 50px;
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
 }
 .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+/* .card-list .item:not(:last-child) {
+  margin-right: 30px;
+} */
+.card-img {
+  margin-bottom: 30px;
+  display: block;
 }
 .card-item {
   background-color: var(--hero-primary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .card-title {
+  margin-bottom: 10px;
+
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -162,6 +274,7 @@ body {
   text-align: center;
 }
 .card-text {
+  padding-bottom: 30px;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
@@ -170,12 +283,17 @@ body {
 .footer {
   background-color: var(--footer-bckgrd-color);
 }
-.footer-logo {
+.logo.footer-logo {
+  padding-top: 60px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
   color: var(--hero-primary-color);
 }
 .addr-list {
+  padding-bottom: 60px;
 }
-.addr-item {
+.addr-list .item:not(:last-child) {
+  margin-bottom: 9px;
 }
 .addr-link {
   font-style: normal;
@@ -187,8 +305,19 @@ body {
 }
 /* potfolio css */
 /* filter buttons css*/
+.portfolio {
+  padding-bottom: 94px;
+}
+.filter-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 34px;
+}
+
 .filter-btn {
-  font-family: inherit;
+  padding: 6px 22px;
+
   color: var(--secondary-text-color);
   background-color: var(--btn-bckgrd-color);
   border-radius: 4px;
@@ -203,13 +332,30 @@ body {
 .filter-btn:focus {
   color: var(--hero-primary-color);
   background-color: var(--accent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.portfolio-item {
+.portf-text {
+  width: 370px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--card-border-color);
+  border-right: 1px solid var(--card-border-color);
+  border-left: 1px solid var(--card-border-color);
 }
+.portf-img {
+  display: block;
+}
+
 .portfolio-subtitle {
+  margin-bottom: 4px;
+  padding: 20px 24px 0px;
+
   color: var(--secondary-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -217,9 +363,8 @@ body {
   letter-spacing: 0.06em;
 }
 .porfolio-discr {
+  padding: 0px 24px;
+  margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.87;
 }
-
-/* прошу вашої уваги , у нас в макеті кнопка в hero не має стану hover , тільки
-active */
