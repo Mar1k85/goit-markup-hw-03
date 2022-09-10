@@ -61,11 +61,11 @@ ul {
 }
 /* header css */
 .page-header {
+  border-bottom: 1px solid var(--header-border-color);
 }
 .header-nav {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--header-border-color);
 }
 .nav {
   display: flex;
@@ -205,6 +205,9 @@ ul {
   line-height: 1.16;
   text-align: center;
 }
+.work-section {
+  padding-bottom: 94px;
+}
 .work-list {
   display: flex;
   flex-wrap: wrap;
@@ -214,9 +217,13 @@ ul {
   max-width: 370px;
 }
 /* our team css */
-.team {
+.team-section {
   background-color: var(--btn-bckgrd-color);
+}
+.team {
+  /* background-color: var(--btn-bckgrd-color); */
   padding-bottom: 94px;
+  /* padding-top: 94px; */
 }
 .team-title {
   margin-bottom: 50px;
